@@ -2,8 +2,10 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const features = [
+    // ... (features remain the same)
     {
         id: 1,
         title: "Real-Time Tax Calculation",
@@ -53,28 +55,49 @@ const FeatureShowcase = () => {
     return (
         <section className="py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left side: Sticky Image Cabinet */}
-            <div className="relative aspect-[4/3] bg-[#F5F5F5] rounded-[48px] overflow-hidden flex items-center justify-center p-8 md:p-12 shadow-sm order-2 lg:order-1">
+            <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative aspect-[4/3] bg-[#F5F5F5] rounded-[48px] overflow-hidden flex items-center justify-center p-8 md:p-12 shadow-sm order-2 lg:order-1"
+            >
                 <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl bg-white transition-all duration-500 transform flex items-center justify-center">
-                    {activeFeature?.image ? (
-                        <Image
-                            src={activeFeature.image}
-                            alt={activeFeature.title}
-                            fill
-                            className="object-cover object-top"
-                        />
-                    ) : (
-                        <div className="text-[#A3A3A3] text-sm font-medium animate-pulse">
-                            Preview coming soon
-                        </div>
-                    )}
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={activeId}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="relative w-full h-full"
+                        >
+                            {activeFeature?.image ? (
+                                <Image
+                                    src={activeFeature.image}
+                                    alt={activeFeature.title}
+                                    fill
+                                    className="object-cover object-top"
+                                />
+                            ) : (
+                                <div className="flex items-center justify-center w-full h-full text-[#A3A3A3] text-sm font-medium animate-pulse">
+                                    Preview coming soon
+                                </div>
+                            )}
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Right side: Feature Cards */}
             <div className="flex flex-col gap-6 order-1 lg:order-2">
-                {features.map((feature) => (
-                    <div
+                {features.map((feature, idx) => (
+                    <motion.div
                         key={feature.id}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: idx * 0.1 }}
                         onClick={() => setActiveId(feature.id)}
                         className={`p-8 rounded-[32px] cursor-pointer transition-all duration-300 border-2 ${activeId === feature.id
                             ? 'bg-[#F0F7FF] border-transparent shadow-sm'
@@ -94,7 +117,7 @@ const FeatureShowcase = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>

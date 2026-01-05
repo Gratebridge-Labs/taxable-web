@@ -1,8 +1,8 @@
-"use client";
-
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const faqData = [
+    // ... (faqData remains the same)
     {
         question: "Do I need to file taxes if I'm self-employed?",
         answer: "Yes. If you earn income from freelancing, online business, or any self-employment, you are required by Nigerian law to file your Personal Income Tax returns."
@@ -28,8 +28,12 @@ const FAQSection = () => {
         <section className="py-24 max-w-4xl mx-auto px-6">
             <div className="space-y-4">
                 {faqData.map((item, idx) => (
-                    <div
+                    <motion.div
                         key={idx}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: idx * 0.1 }}
                         className="bg-[#F5F5F5] rounded-[24px] overflow-hidden transition-all duration-300 border border-transparent hover:border-gray-200"
                     >
                         <button
@@ -57,7 +61,7 @@ const FAQSection = () => {
                                 </svg>
                             </div>
                         </button>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>

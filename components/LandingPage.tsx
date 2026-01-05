@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import HowItWorks from './HowItWorks';
 import ComparisonSection from './ComparisonSection';
 import FeatureShowcase from './FeatureShowcase';
@@ -8,6 +9,7 @@ import BottomCTA from './BottomCTA';
 import FAQSection from './FAQSection';
 
 // Icons based on the image
+// ... (icons remain the same)
 const FileLockIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#404040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -59,7 +61,7 @@ const Logo = () => (
 
 export default function LandingPage() {
     return (
-        <div className="min-h-screen bg-white text-taxable-dark font-sans selection:bg-taxable-blue selection:text-white">
+        <div className="min-h-screen bg-white text-taxable-dark font-sans selection:bg-taxable-blue selection:text-white overflow-x-hidden">
             {/* Header */}
             <header className="py-6 px-6 md:px-14 flex items-center justify-between w-full max-w-7xl mx-auto">
                 <Logo />
@@ -70,7 +72,7 @@ export default function LandingPage() {
                         <Link href="#" className="hover:text-taxable-blue transition-colors">Blog</Link>
                     </div>
                     <Link
-                        href="/signin"
+                        href="https://dashboard.gettaxable.com/"
                         className="border border-[#E5E5E5] text-taxable-blue font-semibold px-5 py-2 rounded-full text-[15px] hover:bg-gray-50 transition-all hover:shadow-sm"
                     >
                         Sign In
@@ -81,64 +83,64 @@ export default function LandingPage() {
             <main className="w-full max-w-7xl mx-auto px-6 md:px-14">
                 {/* Hero Section */}
                 <section className="pt-20 md:pt-32 pb-20">
-                    <h1 className="text-[44px] md:text-[68px] font-bold tracking-tight text-[#171717] mb-6 leading-[1.05] max-w-2xl">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="text-[44px] md:text-[68px] font-bold tracking-tight text-[#171717] mb-6 leading-[1.05] max-w-2xl"
+                    >
                         The modern standard for Nigerian tax compliance.
-                    </h1>
-                    <p className="text-lg md:text-[20px] font-medium text-[#737373] mb-10 leading-[1.5] max-w-2xl">
+                    </motion.h1>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                        className="text-lg md:text-[20px] font-medium text-[#737373] mb-10 leading-[1.5] max-w-2xl"
+                    >
                         The easiest way to file your Nigerian taxes. Enter your income once, and Taxable generates all forms, calculates your tax, and gets you ready to file.
-                    </p>
-                    <button className="bg-taxable-blue hover:bg-opacity-95 text-white font-bold px-7 py-3.5 rounded-xl text-[16px] transition-all active:scale-95 shadow-lg shadow-taxable-blue/20">
+                    </motion.p>
+                    <motion.button
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                        className="bg-taxable-blue hover:bg-opacity-95 text-white font-bold px-7 py-3.5 rounded-xl text-[16px] transition-all active:scale-95 shadow-lg shadow-taxable-blue/20"
+                    >
                         Join waitlist
-                    </button>
+                    </motion.button>
                 </section>
 
                 {/* Features Section */}
-                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-12 mb-24">
-                    <div className="flex flex-row items-center gap-4">
-                        <div className="flex-shrink-0">
-                            <FileLockIcon />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-[16px] text-[#171717]">Bank-Level Security</h3>
-                            <p className="text-[14px] text-[#737373] mt-0.5">
-                                Your data is encrypted and secure.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="flex flex-row items-center gap-4">
-                        <div className="flex-shrink-0">
-                            <ComplianceIcon />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-[16px] text-[#171717]">NIRS-Compliant</h3>
-                            <p className="text-[14px] text-[#737373] mt-0.5">
-                                Built on current Nigerian tax regulations.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="flex flex-row items-center gap-4">
-                        <div className="flex-shrink-0">
-                            <AuditIcon />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-[16px] text-[#171717]">Audit-Ready</h3>
-                            <p className="text-[14px] text-[#737373] mt-0.5">
-                                Professional reports with full audit trails.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="flex flex-row items-center gap-4">
-                        <div className="flex-shrink-0">
-                            <ExpertIcon />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-[16px] text-[#171717]">Expert Support</h3>
-                            <p className="text-[14px] text-[#737373] mt-0.5">
-                                Accountant review available anytime.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                <motion.section
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-12 mb-24"
+                >
+                    {[
+                        { icon: <FileLockIcon />, title: "Bank-Level Security", desc: "Your data is encrypted and secure." },
+                        { icon: <ComplianceIcon />, title: "NIRS-Compliant", desc: "Built on current Nigerian tax regulations." },
+                        { icon: <AuditIcon />, title: "Audit-Ready", desc: "Professional reports with full audit trails." },
+                        { icon: <ExpertIcon />, title: "Expert Support", desc: "Accountant review available anytime." },
+                    ].map((feature, idx) => (
+                        <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: idx * 0.1 }}
+                            className="flex flex-row items-center gap-4"
+                        >
+                            <div className="flex-shrink-0">
+                                {feature.icon}
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-[16px] text-[#171717]">{feature.title}</h3>
+                                <p className="text-[14px] text-[#737373] mt-0.5">{feature.desc}</p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.section>
 
                 {/* Dashboard Screenshot Section */}
                 <section className="w-full bg-[#F5F5F5] rounded-[40px] md:rounded-[60px] p-6 md:p-14 mb-32 relative overflow-hidden flex items-center justify-center">

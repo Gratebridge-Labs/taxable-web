@@ -1,5 +1,5 @@
-import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const ComparisonSection = () => {
     const comparisonData = [
@@ -28,7 +28,13 @@ const ComparisonSection = () => {
     return (
         <section className="py-24 grid grid-cols-1 lg:grid-cols-3 gap-x-12 gap-y-16 items-start">
             {/* Column 1: Header */}
-            <div className="max-w-xs">
+            <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="max-w-xs"
+            >
                 <h2 className="text-[32px] md:text-[40px] font-bold text-[#171717] mb-8 leading-tight">
                     Tax Filing Doesn't Have to Be This Hard
                 </h2>
@@ -40,7 +46,7 @@ const ComparisonSection = () => {
                         Watch Demo
                     </button>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Column 2: Without Taxable */}
             <div>

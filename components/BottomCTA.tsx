@@ -1,11 +1,17 @@
-import React from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const BottomCTA = () => {
     return (
         <section className="py-24 flex flex-col items-center">
             {/* Header Content */}
-            <div className="text-center mb-12">
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="text-center mb-12"
+            >
                 <h2 className="text-[32px] md:text-[40px] font-bold text-taxable-navy mb-8 max-w-2xl mx-auto leading-tight">
                     Join Nigerians who've already simplified tax filing
                 </h2>
@@ -17,10 +23,16 @@ const BottomCTA = () => {
                         Watch Demo
                     </button>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Dashboard Mockup */}
-            <div className="w-full max-w-[1100px] mt-8 bg-white rounded-2xl shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] border border-[#E5E5E5] overflow-hidden group cursor-pointer">
+            <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="w-full max-w-[1100px] mt-8 bg-white rounded-2xl shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] border border-[#E5E5E5] overflow-hidden group cursor-pointer"
+            >
                 <div className="relative aspect-[16/10] w-full">
                     <Image
                         src="/images/taxable_pit.png"
@@ -35,7 +47,7 @@ const BottomCTA = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 };
