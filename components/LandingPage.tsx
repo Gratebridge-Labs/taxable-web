@@ -1,49 +1,46 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import HowItWorks from './HowItWorks';
+import ComparisonSection from './ComparisonSection';
+import FeatureShowcase from './FeatureShowcase';
+import BottomCTA from './BottomCTA';
+import FAQSection from './FAQSection';
 
-// Simple Icons
-const ShieldIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-taxable-dark">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" fill="none" />
-        <path d="M9 12h.01" /><path d="M12 12h.01" /><path d="M15 12h.01" /> {/* Placeholder detail */}
-        <path d="M8 11h8v5H8z" /> {/* Lock/File ish */}
-    </svg>
-);
-// Adjusting icons to match the image better (generic outlines)
+// Icons based on the image
 const FileLockIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-        <polyline points="14 2 14 8 20 8" />
-        <path d="M12 13v4" />
-        <path d="M12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" /> {/* Lock shape loosely */}
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#404040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M14 2V8H20" stroke="#404040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M11 14H13" stroke="#404040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M11 17H13" stroke="#404040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 14H10" stroke="#404040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 17H10" stroke="#404040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
 
-const GlobeIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <circle cx="12" cy="12" r="10" />
-        <line x1="2" y1="12" x2="22" y2="12" />
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+const ComplianceIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="#404040" strokeWidth="2" />
+        <path d="M9 12L11 14L15 10" stroke="#404040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="12" cy="12" r="7" stroke="#404040" strokeWidth="1" strokeDasharray="2 2" />
     </svg>
 );
 
-const CheckCircleIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-        <polyline points="22 4 12 14.01 9 11.01" />
+const AuditIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="#404040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M14 2V8H20" stroke="#404040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 13H16" stroke="#404040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 17H14" stroke="#404040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
 
-const FileCheckIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-        <polyline points="14 2 14 8 20 8" />
-        <path d="M16 13h-4" />
-        <path d="M12 17h4" />
-        <path d="M10 13H8" />
-        <path d="M10 17H8" />
+const ExpertIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="#404040" strokeWidth="2" />
+        <path d="M2.5 12H21.5" stroke="#404040" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M12 2.5C14.5 5 15.5 8.5 15.5 12C15.5 15.5 14.5 19 12 21.5C9.5 19 8.5 15.5 8.5 12C8.5 8.5 9.5 5 12 2.5Z" stroke="#404040" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
 );
 
@@ -52,8 +49,9 @@ const Logo = () => (
         <Image
             src="/logo_blue.svg"
             alt="Taxable"
-            width={100}
-            height={61}
+            width={120}
+            height={40}
+            className="w-auto h-9"
             priority
         />
     </Link>
@@ -61,85 +59,120 @@ const Logo = () => (
 
 export default function LandingPage() {
     return (
-        <div className="min-h-screen bg-white text-taxable-dark font-sans">
-            <header className="py-6 px-[52px] flex items-center justify-between w-full">
+        <div className="min-h-screen bg-white text-taxable-dark font-sans selection:bg-taxable-blue selection:text-white">
+            {/* Header */}
+            <header className="py-6 px-6 md:px-14 flex items-center justify-between w-full max-w-7xl mx-auto">
                 <Logo />
-                <nav className="flex items-center gap-8">
-                    <div className="hidden md:flex gap-6 text-lg font-medium text-taxable-gray">
-                        <Link href="#" className="hover:text-taxable-gray transition-colors">About</Link>
-                        <Link href="#" className="hover:text-taxable-gray transition-colors">Blog</Link>
+                <nav className="flex items-center gap-4 md:gap-10">
+                    <div className="hidden md:flex gap-8 text-[15px] font-medium text-[#404040]">
+                        <Link href="#" className="hover:text-taxable-blue transition-colors">How It Works</Link>
+                        <Link href="#" className="hover:text-taxable-blue transition-colors">About</Link>
+                        <Link href="#" className="hover:text-taxable-blue transition-colors">Blog</Link>
                     </div>
-                    <Link href="/signin" className="bg-taxable-beige hover:bg-gray-200 text-taxable-blue font-medium px-5 py-2 rounded-2xl text-lg transition-colors">
+                    <Link
+                        href="/signin"
+                        className="border border-[#E5E5E5] text-taxable-blue font-semibold px-5 py-2 rounded-full text-[15px] hover:bg-gray-50 transition-all hover:shadow-sm"
+                    >
                         Sign In
                     </Link>
                 </nav>
             </header>
 
-            <main className="w-full px-[52px] pt-16 md:pt-24 pb-20">
-                <section className="max-w-3xl mb-16">
-                    <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-taxable-dark mb-6 leading-none max-w-[558px]">
+            <main className="w-full max-w-7xl mx-auto px-6 md:px-14">
+                {/* Hero Section */}
+                <section className="pt-20 md:pt-32 pb-20">
+                    <h1 className="text-[44px] md:text-[68px] font-bold tracking-tight text-[#171717] mb-6 leading-[1.05] max-w-2xl">
                         The modern standard for Nigerian tax compliance.
                     </h1>
-                    <p className="text-sm md:text-lg font-medium text-taxable-gray mb-8 leading-relaxed max-w-[558px]">
-                        Drag, drop, and done. Taxable transforms your bank statements into professional, FIRS-compliant tax reports. Built for entrepreneurs who value precision, privacy, and peace of mind.
+                    <p className="text-lg md:text-[20px] font-medium text-[#737373] mb-10 leading-[1.5] max-w-2xl">
+                        The easiest way to file your Nigerian taxes. Enter your income once, and Taxable generates all forms, calculates your tax, and gets you ready to file.
                     </p>
-                    <button className="bg-taxable-blue hover:opacity-90 text-white font-medium px-8 py-3.5 rounded-lg text-base shadow-lg shadow-taxable-blue/10 transition-transform active:scale-95">
-                        Get Started Free
+                    <button className="bg-taxable-blue hover:bg-opacity-95 text-white font-bold px-7 py-3.5 rounded-xl text-[16px] transition-all active:scale-95 shadow-lg shadow-taxable-blue/20">
+                        Join waitlist
                     </button>
                 </section>
 
-                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-10 mb-20 bg-white">
-                    <div className="flex flex-row items-start gap-4">
-                        <div className="p-2.5 bg-taxable-light rounded-xl flex-shrink-0">
+                {/* Features Section */}
+                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-12 mb-24">
+                    <div className="flex flex-row items-center gap-4">
+                        <div className="flex-shrink-0">
                             <FileLockIcon />
                         </div>
                         <div>
-                            <h3 className="font-bold text-taxable-dark mb-1 whitespace-nowrap">Bank-Level Security</h3>
-                            <p className="text-sm text-taxable-gray leading-relaxed">
-                                End-to-end encryption for every file.
+                            <h3 className="font-bold text-[16px] text-[#171717]">Bank-Level Security</h3>
+                            <p className="text-[14px] text-[#737373] mt-0.5">
+                                Your data is encrypted and secure.
                             </p>
                         </div>
                     </div>
-                    <div className="flex flex-row items-start gap-4">
-                        <div className="p-2.5 bg-taxable-light rounded-xl flex-shrink-0">
-                            <GlobeIcon />
+                    <div className="flex flex-row items-center gap-4">
+                        <div className="flex-shrink-0">
+                            <ComplianceIcon />
                         </div>
                         <div>
-                            <h3 className="font-bold text-taxable-dark mb-1 whitespace-nowrap">Universal Support</h3>
-                            <p className="text-sm text-taxable-gray leading-relaxed">
-                                Compatible with all Nigerian bank exports.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="flex flex-row items-start gap-4">
-                        <div className="p-2.5 bg-taxable-light rounded-xl flex-shrink-0">
-                            <CheckCircleIcon />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-taxable-dark mb-1 whitespace-nowrap">FIRS-Aligned</h3>
-                            <p className="text-sm text-taxable-gray leading-relaxed">
+                            <h3 className="font-bold text-[16px] text-[#171717]">NIRS-Compliant</h3>
+                            <p className="text-[14px] text-[#737373] mt-0.5">
                                 Built on current Nigerian tax regulations.
                             </p>
                         </div>
                     </div>
-                    <div className="flex flex-row items-start gap-4">
-                        <div className="p-2.5 bg-taxable-light rounded-xl flex-shrink-0">
-                            <FileCheckIcon />
+                    <div className="flex flex-row items-center gap-4">
+                        <div className="flex-shrink-0">
+                            <AuditIcon />
                         </div>
                         <div>
-                            <h3 className="font-bold text-taxable-dark mb-1 whitespace-nowrap">Audit-Ready</h3>
-                            <p className="text-sm text-taxable-gray leading-relaxed">
+                            <h3 className="font-bold text-[16px] text-[#171717]">Audit-Ready</h3>
+                            <p className="text-[14px] text-[#737373] mt-0.5">
                                 Professional reports with full audit trails.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex flex-row items-center gap-4">
+                        <div className="flex-shrink-0">
+                            <ExpertIcon />
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-[16px] text-[#171717]">Expert Support</h3>
+                            <p className="text-[14px] text-[#737373] mt-0.5">
+                                Accountant review available anytime.
                             </p>
                         </div>
                     </div>
                 </section>
 
-                <section className="w-full bg-taxable-beige rounded-3xl h-[600px] relative overflow-hidden">
-                    {/* Placeholder for the big beige area in the design. 
-                Could be an image or just a color block as per the design summary provided. 
-                The design image shows just a large beige area, effectively a UI placeholder or empty state. */}
+                {/* Dashboard Screenshot Section */}
+                <section className="w-full bg-[#F5F5F5] rounded-[40px] md:rounded-[60px] p-6 md:p-14 mb-32 relative overflow-hidden flex items-center justify-center">
+                    <div className="relative w-full max-w-5xl group cursor-pointer shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] rounded-2xl overflow-hidden bg-white">
+                        <Image
+                            src="/images/taxable_pit.png"
+                            alt="Taxable Dashboard"
+                            width={1400}
+                            height={900}
+                            className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.01]"
+                        />
+                        {/* Play Button Overlay - Ready for Video Integration Later */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-500 group-hover:bg-black/5">
+                            <div className="w-16 h-16 md:w-20 md:h-20 bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50 shadow-xl transition-all duration-300 group-hover:scale-110 group-active:scale-95">
+                                <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-[#262626] border-b-[10px] border-b-transparent ml-1.5" />
+                            </div>
+                        </div>
+                    </div>
                 </section>
+
+                {/* How It Works Section */}
+                <HowItWorks />
+
+                {/* Comparison Section */}
+                <ComparisonSection />
+
+                {/* Feature Showcase Section */}
+                <FeatureShowcase />
+
+                {/* Bottom CTA Section */}
+                <BottomCTA />
+
+                {/* FAQ Section */}
+                <FAQSection />
             </main>
         </div>
     );

@@ -13,6 +13,7 @@
   --taxable-gray: #737373;
   --taxable-alert: #FFCFCF;
   --taxable-light: #FAFAFA;
+  --taxable-navy: #0D1B2A;
 }
 
 @theme inline {
@@ -27,6 +28,7 @@
   --color-taxable-gray: var(--taxable-gray);
   --color-taxable-alert: var(--taxable-alert);
   --color-taxable-light: var(--taxable-light);
+  --color-taxable-navy: var(--taxable-navy);
 
   --font-sans: var(--font-archivo);
 }
