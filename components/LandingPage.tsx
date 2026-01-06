@@ -71,7 +71,12 @@ export default function LandingPage() {
                     <div className="hidden md:flex gap-8 text-[15px] font-medium text-[#404040]">
                         <Link href="#" className="hover:text-taxable-blue transition-colors">How It Works</Link>
                         <Link href="#" className="hover:text-taxable-blue transition-colors">About</Link>
-                        <Link href="#" className="hover:text-taxable-blue transition-colors">Blog</Link>
+                        <Link
+                            href="/blog"
+                            className="hover:text-taxable-blue transition-colors text-[15px] font-medium text-[#404040]"
+                        >
+                            Blog
+                        </Link>
                     </div>
                     <Link
                         href="https://dashboard.gettaxable.com/"
