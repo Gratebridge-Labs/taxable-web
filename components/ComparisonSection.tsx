@@ -37,14 +37,14 @@ const ComparisonSection = () => {
                 transition={{ duration: 0.7 }}
                 className="max-w-xs"
             >
-                <h2 className="text-[32px] md:text-[40px] font-bold text-[#171717] mb-8 leading-tight">
+                <h2 className="text-2xl md:text-3xl font-medium text-taxable-dark mb-8 leading-tight">
                     Tax Filing Doesn't Have to Be This Hard
                 </h2>
                 <div className="flex flex-wrap gap-4">
-                    <button className="bg-taxable-blue hover:bg-opacity-95 text-white font-bold px-6 py-3 rounded-xl text-[15px] transition-all active:scale-95 shadow-lg shadow-taxable-blue/20">
+                    <button className="bg-taxable-blue hover:bg-opacity-95 text-taxable-light font-medium px-6 py-3 rounded-xl text-lg transition-all active:scale-95 shadow-lg shadow-taxable-blue/20">
                         Join waitlist
                     </button>
-                    <button className="bg-white border border-[#E5E5E5] text-[#171717] font-semibold px-6 py-3 rounded-xl text-[15px] hover:bg-gray-50 transition-all">
+                    <button className="bg-white border border-[#E5E5E5] text-taxable-dark font-medium px-6 py-3 rounded-xl text-lg hover:bg-gray-50 transition-all">
                         Watch Demo
                     </button>
                 </div>
@@ -52,16 +52,16 @@ const ComparisonSection = () => {
 
             {/* Column 2: Without Taxable */}
             <div>
-                <div className="text-[17px] font-semibold text-[#737373] mb-8 pb-4 border-b border-transparent">
+                <div className="text-lg font-medium text-taxable-gray mb-8 pb-4 border-b border-transparent">
                     Without Taxable
                 </div>
                 <div className="space-y-12">
                     {comparisonData.map((row, idx) => (
-                        <div key={idx} className="border-b border-[#F5F5F5] pb-8 last:border-0">
-                            <div className="text-[13px] text-[#A3A3A3] mb-4 h-5">{row.category.left}</div>
+                        <div key={idx} className="border-b border-taxable-lightgray2 pb-8 last:border-0">
+                            <div className="text-base text-[#A3A3A3] mb-4 h-5">{row.category.left}</div>
                             <ul className="space-y-3">
                                 {row.leftItems.map((item, i) => (
-                                    <li key={i} className="text-[15px] text-[#737373]">{item}</li>
+                                    <li key={i} className="text-lg text-taxable-gray">{item}</li>
                                 ))}
                             </ul>
                         </div>
@@ -71,16 +71,16 @@ const ComparisonSection = () => {
 
             {/* Column 3: With Taxable */}
             <div>
-                <div className="text-[17px] font-bold text-[#171717] mb-8 pb-4 border-b border-transparent">
+                <div className="text-lg font-medium text-taxable-gray mb-8 pb-4 border-b border-transparent">
                     With Taxable
                 </div>
                 <div className="space-y-12">
                     {comparisonData.map((row, idx) => (
-                        <div key={idx} className="border-b border-[#F5F5F5] pb-8 last:border-0">
-                            <div className="text-[13px] text-[#A3A3A3] mb-4 h-5">{row.category.right}</div>
+                        <div key={idx} className="border-b border-taxable-lightgray2 pb-8 last:border-0">
+                            <div className="text-base text-[#A3A3A3] mb-4 h-5">{row.category.right}</div>
                             <ul className="space-y-3">
                                 {row.rightItems.map((item, i) => (
-                                    <li key={i} className="text-[15px] font-bold text-[#171717]">{item}</li>
+                                    <li key={i} className="text-lg font-bold text-taxable-dark">{item}</li>
                                 ))}
                             </ul>
                         </div>

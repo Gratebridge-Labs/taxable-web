@@ -25,7 +25,7 @@ const HowItWorks = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-[32px] md:text-[40px] font-bold text-[#171717] mb-12 leading-tight max-w-sm"
+                className="text-2xl md:text-3xl font-semibold text-taxable-dark mb-12 leading-tight max-w-sm"
             >
                 Simple tax filing in three steps
             </motion.h2>
@@ -40,10 +40,10 @@ const HowItWorks = () => {
                         className="bg-[#F5F5F5] rounded-[40px] p-8 md:p-10 min-h-[480px] flex flex-col justify-end transition-transform hover:scale-[1.02] duration-300"
                     >
                         <div className="max-w-[280px]">
-                            <h3 className="text-xl font-bold text-[#171717] mb-3">
+                            <h3 className="text-xl font-medium text-taxable-dark mb-3">
                                 {step.title}
                             </h3>
-                            <p className="text-[#737373] text-[15px] leading-relaxed">
+                            <p className="text-taxable-gray text-lg leading-relaxed">
                                 {step.description}
                             </p>
                         </div>

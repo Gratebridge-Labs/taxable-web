@@ -109,10 +109,10 @@ const FeatureShowcase = () => {
                                 {feature.icon(activeId === feature.id)}
                             </div>
                             <div>
-                                <h3 className={`text-xl font-bold mb-3 ${activeId === feature.id ? 'text-taxable-navy' : 'text-[#404040]'}`}>
+                                <h3 className={`text-xl font-medium mb-3 ${activeId === feature.id ? 'text-taxable-navy' : 'text-[#404040]'}`}>
                                     {feature.title}
                                 </h3>
-                                <p className={`text-[15px] leading-relaxed transition-opacity duration-300 ${activeId === feature.id ? 'text-[#404040] opacity-100' : 'text-[#737373] opacity-70'}`}>
+                                <p className={`text-lg leading-relaxed transition-opacity duration-300 ${activeId === feature.id ? 'text-[#404040] opacity-100' : 'text-[#737373] opacity-70'}`}>
                                     {feature.description}
                                 </p>
                             </div>

@@ -14,14 +14,14 @@ const BottomCTA = () => {
                 transition={{ duration: 0.7 }}
                 className="text-center mb-12"
             >
-                <h2 className="text-[32px] md:text-[40px] font-bold text-taxable-navy mb-8 max-w-2xl mx-auto leading-tight">
+                <h2 className="text-2xl md:text-3xl font-semibold text-taxable-navy mb-8 max-w-2xl mx-auto leading-tight">
                     Join Nigerians who've already simplified tax filing
                 </h2>
                 <div className="flex flex-wrap justify-center gap-4">
-                    <button className="bg-taxable-blue hover:bg-opacity-95 text-white font-bold px-8 py-3.5 rounded-xl text-[16px] transition-all active:scale-95 shadow-lg shadow-taxable-blue/20">
+                    <button className="bg-taxable-blue hover:bg-opacity-95 text-taxable-light font-medium px-8 py-3.5 rounded-xl text-lg transition-all active:scale-95 shadow-lg shadow-taxable-blue/20">
                         Join waitlist
                     </button>
-                    <button className="bg-white border border-[#E5E5E5] text-[#171717] font-semibold px-8 py-3.5 rounded-xl text-[15px] hover:bg-gray-50 transition-all">
+                    <button className="bg-white border border-taxable-lightgray text-taxable-dark font-medium px-8 py-3.5 rounded-xl text-lg hover:bg-gray-50 transition-all">
                         Watch Demo
                     </button>
                 </div>
