@@ -55,12 +55,12 @@ const FAQSection = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="flex flex-wrap gap-4"
+                        className="flex flex-row gap-3"
                     >
-                        <button className="px-6 py-3 rounded-2xl bg-white border border-[#E5E5E5] text-[#171717] font-medium text-lg hover:bg-gray-50 transition-all hover:shadow-sm">
+                        <button className="px-4 md:px-6 py-3 rounded-2xl bg-white border border-[#E5E5E5] text-[#171717] font-medium text-base md:text-lg hover:bg-gray-50 transition-all hover:shadow-sm whitespace-nowrap">
                             Watch Demo
                         </button>
-                        <button className="px-6 py-3 rounded-2xl bg-white border border-[#E5E5E5] text-[#171717] font-medium text-lg hover:bg-gray-50 transition-all hover:shadow-sm">
+                        <button className="px-4 md:px-6 py-3 rounded-2xl bg-white border border-[#E5E5E5] text-[#171717] font-medium text-base md:text-lg hover:bg-gray-50 transition-all hover:shadow-sm whitespace-nowrap">
                             Contact us
                         </button>
                     </motion.div>

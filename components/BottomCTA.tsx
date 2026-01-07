@@ -17,11 +17,11 @@ const BottomCTA = () => {
                 <h2 className="text-2xl md:text-3xl font-semibold text-taxable-navy mb-8 max-w-2xl mx-auto leading-tight">
                     Join Nigerians who've already simplified tax filing
                 </h2>
-                <div className="flex flex-wrap justify-center gap-4">
-                    <button className="bg-taxable-blue hover:bg-opacity-95 text-taxable-light font-medium px-8 py-3.5 rounded-xl text-lg transition-all active:scale-95 shadow-lg shadow-taxable-blue/20">
+                <div className="flex flex-row justify-center gap-3">
+                    <button className="bg-taxable-blue hover:bg-opacity-95 text-taxable-light font-medium px-5 md:px-8 py-3.5 rounded-xl text-base md:text-lg transition-all active:scale-95 shadow-lg shadow-taxable-blue/20 whitespace-nowrap">
                         Join waitlist
                     </button>
-                    <button className="bg-white border border-taxable-lightgray text-taxable-dark font-medium px-8 py-3.5 rounded-xl text-lg hover:bg-gray-50 transition-all">
+                    <button className="bg-white border border-taxable-lightgray text-taxable-dark font-medium px-5 md:px-8 py-3.5 rounded-xl text-base md:text-lg hover:bg-gray-50 transition-all whitespace-nowrap">
                         Watch Demo
                     </button>
                 </div>

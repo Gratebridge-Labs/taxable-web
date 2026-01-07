@@ -65,22 +65,16 @@ export default function LandingPage() {
     return (
         <div className="min-h-screen bg-white text-taxable-dark font-sans selection:bg-taxable-blue selection:text-white overflow-x-hidden">
             {/* Header */}
-            <header className="py-6 px-6 md:px-14 flex items-center justify-between w-full max-w-7xl mx-auto">
+            <header className="py-6 px-4 md:px-14 flex items-center justify-between w-full max-w-7xl mx-auto">
                 <Logo />
-                <nav className="flex items-center gap-4 md:gap-10">
-                    <div className="hidden md:flex gap-8 text-[15px] font-medium text-[#404040]">
+                <nav className="flex items-center gap-3 md:gap-10">
+                    <div className="flex gap-4 md:gap-8 text-[13px] md:text-[15px] font-medium text-[#404040]">
                         <Link href="#" className="hover:text-taxable-blue transition-colors">How It Works</Link>
-                        <Link href="#" className="hover:text-taxable-blue transition-colors">About</Link>
-                        <Link
-                            href="/blog"
-                            className="hover:text-taxable-blue transition-colors text-[15px] font-medium text-[#404040]"
-                        >
-                            Blog
-                        </Link>
+                        <Link href="/blog" className="hover:text-taxable-blue transition-colors">Blog</Link>
                     </div>
                     <Link
                         href="https://dashboard.gettaxable.com/"
-                        className="border border-[#E5E5E5] text-taxable-blue font-semibold px-5 py-2 rounded-full text-[15px] hover:bg-gray-50 transition-all hover:shadow-sm"
+                        className="border border-[#E5E5E5] text-taxable-blue font-semibold px-4 md:px-5 py-2 rounded-full text-[13px] md:text-[15px] hover:bg-gray-50 transition-all hover:shadow-sm whitespace-nowrap"
                     >
                         Sign In
                     </Link>
@@ -106,14 +100,19 @@ export default function LandingPage() {
                     >
                         The easiest way to file your Nigerian taxes. Enter your income once, and Taxable generates all forms, calculates your tax, and gets you ready to file.
                     </motion.p>
-                    <motion.button
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                        className="bg-taxable-blue hover:bg-opacity-95 text-white font-bold px-7 py-3.5 rounded-xl text-[16px] transition-all active:scale-95 shadow-lg shadow-taxable-blue/20"
+                        className="flex flex-row items-center gap-3"
                     >
-                        Join waitlist
-                    </motion.button>
+                        <button className="bg-taxable-blue hover:bg-opacity-95 text-white font-bold px-5 md:px-8 py-3.5 rounded-xl text-[15px] md:text-[16px] transition-all active:scale-95 shadow-lg shadow-taxable-blue/20 whitespace-nowrap">
+                            Join waitlist
+                        </button>
+                        <button className="bg-white border border-[#E5E5E5] text-taxable-dark font-medium px-5 md:px-8 py-3.5 rounded-xl text-[15px] md:text-[16px] hover:bg-gray-50 transition-all whitespace-nowrap">
+                            Watch Demo
+                        </button>
+                    </motion.div>
                 </section>
 
                 {/* Features Section */}

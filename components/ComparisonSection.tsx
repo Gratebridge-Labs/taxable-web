@@ -40,11 +40,11 @@ const ComparisonSection = () => {
                 <h2 className="text-2xl md:text-3xl font-medium text-taxable-dark mb-8 leading-tight">
                     Tax Filing Doesn't Have to Be This Hard
                 </h2>
-                <div className="flex flex-wrap gap-4">
-                    <button className="bg-taxable-blue hover:bg-opacity-95 text-taxable-light font-medium px-6 py-3 rounded-xl text-lg transition-all active:scale-95 shadow-lg shadow-taxable-blue/20">
+                <div className="flex flex-row gap-3">
+                    <button className="bg-taxable-blue hover:bg-opacity-95 text-taxable-light font-medium px-4 md:px-6 py-3 rounded-xl text-base md:text-lg transition-all active:scale-95 shadow-lg shadow-taxable-blue/20 whitespace-nowrap">
                         Join waitlist
                     </button>
-                    <button className="bg-white border border-[#E5E5E5] text-taxable-dark font-medium px-6 py-3 rounded-xl text-lg hover:bg-gray-50 transition-all">
+                    <button className="bg-white border border-[#E5E5E5] text-taxable-dark font-medium px-4 md:px-6 py-3 rounded-xl text-base md:text-lg hover:bg-gray-50 transition-all whitespace-nowrap">
                         Watch Demo
                     </button>
                 </div>
