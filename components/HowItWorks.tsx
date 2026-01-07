@@ -37,7 +37,7 @@ const HowItWorks = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.15 }}
-                        className="bg-[#F5F5F5] rounded-[40px] p-8 md:p-10 min-h-[480px] flex flex-col justify-end transition-transform hover:scale-[1.02] duration-300"
+                        className="bg-taxable-lightgray2 rounded-[40px] p-8 md:p-10 min-h-[480px] flex flex-col justify-end transition-transform hover:scale-[1.02] duration-300"
                     >
                         <div className="max-w-[280px]">
                             <h3 className="text-xl font-medium text-taxable-dark mb-3">

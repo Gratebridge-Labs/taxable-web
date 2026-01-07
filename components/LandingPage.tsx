@@ -94,7 +94,7 @@ export default function LandingPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="text-[44px] md:text-[68px] font-bold tracking-tight text-[#171717] mb-6 leading-[1.05] max-w-2xl"
+                        className="text-3xl md:text-5xl font-semibold tracking-tight text-[#171717] mb-6 leading-[1.05] max-w-2xl"
                     >
                         The modern standard for Nigerian tax compliance.
                     </motion.h1>
@@ -102,7 +102,7 @@ export default function LandingPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                        className="text-lg md:text-[20px] font-medium text-[#737373] mb-10 leading-[1.5] max-w-2xl"
+                        className="text-base md:text-lg font-medium text-[#737373] mb-10 leading-[1.5] max-w-2xl"
                     >
                         The easiest way to file your Nigerian taxes. Enter your income once, and Taxable generates all forms, calculates your tax, and gets you ready to file.
                     </motion.p>
@@ -142,8 +142,8 @@ export default function LandingPage() {
                                 {feature.icon}
                             </div>
                             <div>
-                                <h3 className="font-bold text-[16px] text-[#171717]">{feature.title}</h3>
-                                <p className="text-[14px] text-[#737373] mt-0.5">{feature.desc}</p>
+                                <h3 className="font-medium text-lg text-taxable-navy">{feature.title}</h3>
+                                <p className="text-base text-taxable-gray mt-0.5">{feature.desc}</p>
                             </div>
                         </motion.div>
                     ))}
