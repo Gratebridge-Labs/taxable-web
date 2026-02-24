@@ -199,6 +199,14 @@ export default function BlogPostClient({ blog, slug }: { blog: Blog | null, slug
                         Back to all posts
                     </Link>
                 </div>
+
+                <footer className="mt-16 pt-10 border-t border-[#E5E5E5] flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-taxable-gray">
+                    <p>© {new Date().getFullYear()} Gratebridge Labs. Taxable is a product of Gratebridge Labs.</p>
+                    <nav className="flex items-center gap-6">
+                        <Link href="/privacy" className="hover:text-taxable-blue transition-colors">Privacy Policy</Link>
+                        <Link href="/terms" className="hover:text-taxable-blue transition-colors">Terms of Service</Link>
+                    </nav>
+                </footer>
             </article>
         </div>
     );
